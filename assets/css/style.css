@@ -6094,7 +6094,7 @@ hr {
   fill: #fff;
 }
 .st-tab-links.st-style1 li.active a.st-blue-box {
-  color: #fff;
+  color: #000;
   background-color: #0cb8b6;
 }
 .st-tab-links.st-style1 li.active a.st-blue-box:before {
@@ -6153,6 +6153,26 @@ hr {
 .st-fade-tabs.st-style2 {
   background: #f9fafc;
   padding: 18px 30px 25px;
+}
+
+.st-tab-links.st-style1 li img {
+  filter: none; /* Default state of the image */
+  transition: filter 0.3s ease; /* Smooth transition for hover or active state */
+}
+
+/* Active Tab Styles */
+.st-tab-links.st-style1 li.active img {
+  filter: brightness(0) invert(1); /* Change to white */
+}
+
+/* Other Styles for Active Tabs */
+.st-tab-links.st-style1 li.active a.st-blue-box {
+  color: #000;
+  background-color: #0cb8b6;
+}
+.st-tab-links.st-style1 li.active a.st-red-box {
+  color: #fff;
+  background-color: #e6492d;
 }
 
 .st-tab-links.st-style2 {

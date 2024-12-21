@@ -28,6 +28,80 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
+  /* Add this to your CSS */
+.cd-words-wrapper {
+  animation: none !important;  /* Remove animation */
+}
+
+  /* The Modal (background) */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; 
+  z-index: 9999; /* Ensure modal is on top of all other content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative; /* Ensure modal content is positioned correctly */
+  z-index: 10000; /* Ensure modal content stays above scrolling text */
+}
+
+/* The Close Button */
+.close-btn {
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Styling for the scrolling text */
+.st-section-heading-subtitle {
+  position: relative;
+  z-index: 10; /* Ensures scrolling text does not overlay on form */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* If you want the scrolling text to scroll, you can add animation */
+
+
+/* Animation for scrolling text */
+@keyframes scroll-text {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
 </style>
 
 <body>
@@ -95,8 +169,7 @@
       <div class="container">
         <div class="st-main-header-in">
           <div class="st-main-header-left">
-            <a class="st-site-branding" href="index.html"><img src="assets/img/MainLogo.png"
-                style="height: 60px; width: 250px;" alt="Nischinto""></a>
+            <a class="st-site-branding" href="index.html"><img src="assets/img/logo.png" alt="Nischinto""></a>
           </div>
           <div class=" st-main-header-right">
               <div class="st-nav">
@@ -119,7 +192,7 @@
                     <li><a href="blog-details-no-sidebar.html">Blog Details No Sidebar</a></li>
                   </ul>
                 </li> -->
-                  <li><a href="#contact" class="st-smooth-move">Contact</a></li>
+                  <li><a href="#contact-us" class="st-smooth-move">Contact</a></li>
                 </ul>
               </div>
           </div>
@@ -141,7 +214,7 @@
               <span class="cd-words-wrapper">
                 <b class="is-visible">Back Pain</b>
                 <b>Shoulder Pain</b>
-                <b>Chest Pain </b>
+                <b>Chest Wall Pain </b>
                 <b>Knee Pain </b>
                 <b>Sciatica </b>
                 <b>Plantar Fasciitis</b>
@@ -154,17 +227,20 @@
               Visit Avis for end-to-end pain management treatment.</div>
           </div>
           <div class="st-hero-btn">
-            <a href="#contact-modal" class="st-btn st-style1 st-color1" id="appointment-btn">Appointment</a>
+            <a href="#contact-us" class="st-btn st-style1 st-color1" id="appointment-btn" style="background-color: #22699c ;">Appointment</a>
           </div>
 
         </div>
         <div class="st-hero-social-group">
           <div class="container">
             <ul class="st-social-btn st-style1 st-mp0">
-              <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+              <li><a href="#"><i class="fab fa-facebook-square" style=" color:  #22699c ;"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin" style=" color:  #22699c ;"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram" style=" color:  #22699c ;"></i>
+              </i></a></li>
+              <li><a href="#"><i class="fab fa-youtube" style=" color:  #22699c ;"></i>
+              </i></a></li>
+              
             </ul>
           </div>
         </div>
@@ -285,7 +361,7 @@
                   </g>
                 </svg>
               </div>
-              <h2 class="st-iconbox-title">Multimodal Treatments</h2>
+              <h2 class="st-iconbox-title" style=" color:  #22699c ;">Multimodal Treatments</h2>
               <div class="st-iconbox-text">We combine advanced techniques and therapies for comprehensive pain
                 management personalised for you. </div>
             </div>
@@ -307,7 +383,7 @@
                   </g>
                 </svg>
               </div>
-              <h2 class="st-iconbox-title">Non-Surgical Approach</h2>
+              <h2 class="st-iconbox-title" style=" color:  #22699c ;">Non-Surgical Approach</h2>
               <div class="st-iconbox-text">Experience effective pain relief without the need for invasive procedures or
                 surgeries.</div>
             </div>
@@ -343,7 +419,7 @@
                   </g>
                 </svg>
               </div>
-              <h2 class="st-iconbox-title">Fastest Path to Relief</h2>
+              <h2 class="st-iconbox-title" style=" color:  #22699c ;">Fastest Path to Relief</h2>
               <div class="st-iconbox-text">Our specialised treatments ensure quick results so you can get back to living
                 pain-free.</div>
             </div>
@@ -363,12 +439,8 @@
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
         <div class="st-section-heading st-style1">
-          <h2 class="st-section-heading-title">Comprehensive Pain Management Services</h2>
-          <!-- <div class="st-seperator">
-            <div class="st-seperator-left wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-            <div class="st-seperator-center"><img src="assets/img/icons/4.png" alt="icon"></div>
-            <div class="st-seperator-right wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-          </div> -->
+          <h2 class="st-section-heading-title" style=" color:  #22699c ;">Comprehensive Pain Management Services</h2>
+
           <div class="st-section-heading-subtitle">Choose Avis Pain Management Centre for specialized care to help you
             live a pain-free, active and fulfilling life.</div>
         </div>
@@ -379,7 +451,9 @@
           <ul class="st-tab-links st-style1 st-mp0">
             <li class="st-tab-title active ">
               <a href="#Crutches" class="st-blue-box">
-                <div class="st-testimonial-img"><img src="assets/img/back-pain.png" alt="avatar1"></div>
+
+                <div class="st-testimonial-img"><img src="assets/img/back-pain.png" alt="avatar1"
+                    enable-background="new 0 0 512 512" viewBox="0 0 512 512"></div>
                 <span>Back Pain</span>
               </a>
             </li>
@@ -428,18 +502,14 @@
                     <div class="st-vertical-middle">
                       <div class="st-vertical-middle-in">
                         <div class="st-imagebox-info">
-                          <h3 class="st-imagebox-title"><span>Regain Back Strength and Flexibility.
-                            </span></h3>
+                          <h2 class="st-imagebox-title" "><span style=" color:  #22699c ;">Regain Back Strength and Flexibility.</span></h2>
                           <h4 class="st-imagebox-subtitle">Do what you love without discomfort with our treatments for
-                            lasting relief.
-                          </h4>
+                            lasting relief.</h4>
                           <div class="st-imagebox-text">Back pain can originate from several sources, but the treatments
                             need not be complicated. Consult at Avis Pain Management Centre for the best treatment that
                             accommodates your body’s unique needs.</div>
                         </div>
-                        <!-- <div class="st-imagebox-btn">
-                          <a href="#" class="st-btn st-style1 st-size-medium st-color1">Read More</a>
-                        </div> -->
+
                       </div>
                     </div>
                   </div>
@@ -457,17 +527,15 @@
                     <div class="st-vertical-middle">
                       <div class="st-vertical-middle-in">
                         <div class="st-imagebox-info">
-                          <h2 class="st-imagebox-title"> <span>Return to Comfort and Pain-Free Motion.
+                          <h2 class="st-imagebox-title"><span style=" color:  #22699c ;">Return to Comfort and Pain-Free Motion.
                             </span></h2>
                           <h4 class="st-imagebox-subtitle">Pain-free and effortless movement can be your reality with
-                            our expert care.</h4>
+                            our expert care. </h4>
                           <div class="st-imagebox-text">Reduce inflammation and heal your knees quickly with our
                             multimodal treatments. Call us today to restore your joint health and live a life of renewed
                             mobility and lasting comfort.</div>
                         </div>
-                        <!-- <div class="st-imagebox-btn">
-                          <a href="#" class="st-btn st-style1 st-size-medium st-color1">Read More</a>
-                        </div> -->
+
                       </div>
                     </div>
                   </div>
@@ -485,16 +553,14 @@
                     <div class="st-vertical-middle">
                       <div class="st-vertical-middle-in">
                         <div class="st-imagebox-info">
-                          <h2 class="st-imagebox-title"> <span>Soothe Your Burning Pain.</span></h2>
+                          <h2 class="st-imagebox-title"><span style=" color:  #22699c ;">Soothe Your Burning Pain.</span></h2>
                           <h4 class="st-imagebox-subtitle">Overcome chest discomfort and restore your quality of life
-                            with our advanced treatments.</h4>
+                            with our advanced treatments. </h4>
                           <div class="st-imagebox-text">Post herpetic neuralgia can make chest wall pain unbearable, but
                             you don’t have to live with it. We offer a range of treatments that target the pain and help
-                            you regain comfort. Book your appointment!</div>
+                            you regain comfort. Book your appointment.</div>
                         </div>
-                        <!-- <div class="st-imagebox-btn">
-                          <a href="#" class="st-btn st-style1 st-size-medium st-color1">Read More</a>
-                        </div> -->
+
                       </div>
                     </div>
                   </div>
@@ -512,16 +578,14 @@
                     <div class="st-vertical-middle">
                       <div class="st-vertical-middle-in">
                         <div class="st-imagebox-info">
-                          <h2 class="st-imagebox-title"> <span>Move Your Shoulders Smoothly.</span></h2>
+                          <h2 class="st-imagebox-title"><span style=" color:  #22699c ;">Move Your Shoulders Smoothly.</span></h2>
                           <h4 class="st-imagebox-subtitle">Turn your pain and stiffness into strength and flexibility at
-                            Avis.</h4>
+                            Avis. </h4>
                           <div class="st-imagebox-text">Whether it's from injury or overuse, shoulder pain can have a
                             major impact on your routine life. Schedule your consultation today to start your journey
-                            toward relief and recovery</div>
+                            toward relief and recovery.</div>
                         </div>
-                        <!-- <div class="st-imagebox-btn">
-                          <a href="#" class="st-btn st-style1 st-size-medium st-color1">Read More</a>
-                        </div> -->
+
                       </div>
                     </div>
                   </div>
@@ -539,16 +603,14 @@
                     <div class="st-vertical-middle">
                       <div class="st-vertical-middle-in">
                         <div class="st-imagebox-info">
-                          <h2 class="st-imagebox-title"> <span>Relieve Heel Pain for Easy Walking.</span></h2>
+                          <h2 class="st-imagebox-title"><span style=" color:  #22699c ;">Relieve Heel Pain for Easy Walking.</span></h2>
                           <h4 class="st-imagebox-subtitle">Step into comfort with specialised treatments for plantar
                             fasciitis.</h4>
                           <div class="st-imagebox-text">If heel pain is keeping you from staying active, our multimodal
                             treatments for plantar fasciitis can bring a positive change. Let us help you restore
-                            mobility and ease your pain—book your consultation today</div>
+                            mobility and ease your pain—book your consultation today.</div>
                         </div>
-                        <!-- <div class="st-imagebox-btn">
-                          <a href="#" class="st-btn st-style1 st-size-medium st-color1">Read More</a>
-                        </div> -->
+
                       </div>
                     </div>
                   </div>
@@ -559,36 +621,32 @@
               <div class="st-imagebox st-style2">
                 <div class="row">
                   <div class="col-lg-6">
-                    <div class="st-imagebox-img"><img src="assets/img/neckban.jpg" alt="service"></div>
+                    <div class="st-imagebox-img"><img src="assets/img/neurology.png" alt="service"></div>
                     <div class="st-height-b0 st-height-lg-b30"></div>
                   </div>
                   <div class="col-lg-6">
                     <div class="st-vertical-middle">
                       <div class="st-vertical-middle-in">
                         <div class="st-imagebox-info">
-                          <h2 class="st-imagebox-title"> <span>Ease Your Nerve Pain for Better Mobility.</span></h2>
+                          <h2 class="st-imagebox-title"><span style=" color:  #22699c ;">Ease Your Nerve Pain for Better Mobility.</span></h2>
                           <h4 class="st-imagebox-subtitle">Find relief from the radiating pain from your lower back to
-                            the toes.
-                          </h4>
+                            the toes. </h4>
                           <div class="st-imagebox-text">Sciatica doesn’t have to hold you back. Let us help you soothe
                             your pain by targeting its root cause. Book your appointment for relief with our proven
-                            medical techniques and advanced pain management methods.</div>
+                            medical techniques and advanced pain management methods.<< /div>
+                          </div>
+
                         </div>
-                        <!-- <div class="st-imagebox-btn">
-                          <a href="#" class="st-btn st-style1 st-size-medium st-color1">Read More</a>
-                        </div> -->
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div><!-- .st-tabs -->
-      </div>
-      <div class="st-height-b120 st-height-lg-b80"></div>
+          </div><!-- .st-tabs -->
+        </div>
+        <div class="st-height-b120 st-height-lg-b80"></div>
     </section>
-
     <hr>
 
 
@@ -603,7 +661,7 @@
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
         <div class="st-section-heading st-style1">
-          <h2 class="st-section-heading-title">Meet Our Specialist</h2>
+          <h2 class="st-section-heading-title" style="margin-left: 80px;  color:  #22699c ;">Meet Our Specialist</h2>
           <!-- <div class="st-seperator">
             <div class="st-seperator-left wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
             <div class="st-seperator-center"><img src="assets/img/icons/4.png" alt="icon"></div>
@@ -617,18 +675,19 @@
         </div>
         <div id="Neurology">
           <div class="st-imagebox st-style2">
-            <div class="row" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-              <div class="col-lg-6" style="width: 100%; max-width: 300px; margin-bottom: 20px; text-align: center;">
-                <div class="st-imagebox-img" style="margin: 0 auto;"><img src="assets/img/member1.jpg" alt="service"
-                    style="max-width: 100%; height: auto;"></div>
+            <div class="row"
+              style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+              <div class="col-lg-6" style="width: 100%; max-width: 400px; margin-bottom: 20px; ">
+                <div class="st-imagebox-img" style="margin: 0 auto;"><img src="assets/img/doctor.png " alt="service"
+                  style="max-width: 520px; height: 470px;"  ></div>
                 <div class="st-height-b0 st-height-lg-b30"></div>
               </div>
-              <div class="col-lg-6" style="width: 100%; max-width: 600px; text-align: center;">
+              <div class="col-lg-6" style="width: 100%; max-width: 550px;">
                 <div class="st-vertical-middle">
                   <div class="st-vertical-middle-in">
                     <div class="st-imagebox-info">
                       <h2 class="st-imagebox-title" style="font-size: 24px; line-height: 1.4; margin-bottom: 15px;">
-                        <span>Dr. Ershad Mohammed Sohail </span>
+                        <span style=" color:  #22699c ;">Dr. Ershad Mohammed Sohail </span>
                       </h2>
                       <h4 class="st-imagebox-subtitle" style="font-size: 18px; margin-bottom: 15px;">
                         Dr. Ershad Mohammed Sohail is a highly skilled Pain Management Specialist with over 9 years of
@@ -639,6 +698,9 @@
                         further specialized with a Fellowship in Interventional Pain Management (FIPM), equipping him
                         with advanced expertise in non-surgical pain relief techniques.
                       </div>
+                      <div class="st-imagebox-text" style="font-size: 16px; line-height: 1.6;">
+                        With a patient-focused approach, Dr. Sohail is dedicated to providing comprehensive care tailored to each individual’s unique needs. His extensive knowledge and hands-on experience in the latest pain management modalities make him a trusted name for conditions such as sciatica, neck and back pain and neuropathic pain.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -646,7 +708,7 @@
             </div>
           </div>
         </div>
-        <div class="st-height-b120 st-height-lg-b80"></div>
+      
     </section>
 
     <!-- End Team Section -->
@@ -664,7 +726,7 @@
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
         <div class="st-section-heading st-style1">
-          <h2 class="st-section-heading-title">Words from Our Patients</h2>
+          <h2 class="st-section-heading-title" style=" color:  #22699c ;">Words from Our Patients</h2>
 
 
           <div class="st-height-b40 st-height-lg-b40"></div>
@@ -732,7 +794,7 @@
             </div>
           </div><!-- .st-slider -->
         </div>
-        <div class="st-height-b120 st-height-lg-b80"></div>
+      
     </section>
     <!-- End Testimonial Seciton -->
 
@@ -762,10 +824,10 @@
             <div class="st-height-b0 st-height-lg-b30"></div>
           </div>
           <div class="col-lg-6">
-            <h2 class="st-accordian-heading">Frequently Asked Questions</h2>
+            <h2 class="st-accordian-heading"  style=" color:  #22699c ;">Frequently Asked Questions</h2>
             <div class="st-accordian-wrap">
               <div class="st-accordian active ">
-                <div class="st-accordian-title">
+                <div class="st-accordian-title"  style=" background-color:  #22699c ; color: white;">
                   When Should I Seek Treatment for My Pain?
                   <span class="st-accordian-toggle fa fa-angle-down"></span>
                 </div>
@@ -774,18 +836,18 @@
                   increase or may become more challenging to treat.</div>
               </div><!-- .st-accordian -->
               <div class="st-accordian">
-                <div class="st-accordian-title">
+                <div class="st-accordian-title" style=" background-color:  #22699c ; color: white;">
                   How Does Pain Management Treatment Work?
 
 
                   <span class="st-accordian-toggle fa fa-angle-down"></span>
                 </div>
-                <div class="st-accordian-body"> Depending on your condition, our specialist uses a combination of
+                <div class="st-accordian-body" > Depending on your condition, our specialist uses a combination of
                   anti-inflammatory and pain-relief medicines, nerve modulators, muscle relaxants, local anaesthetics
                   and nerve blocks to ease your pain.</div>
               </div><!-- .st-accordian -->
               <div class="st-accordian">
-                <div class="st-accordian-title">
+                <div class="st-accordian-title" style=" background-color:  #22699c ; color: white;">
                   How Long Will I Remain Pain-Free After Treatment?
 
 
@@ -796,7 +858,7 @@
                   from patient to patient.</div>
               </div><!-- .st-accordian -->
               <div class="st-accordian">
-                <div class="st-accordian-title">
+                <div class="st-accordian-title" style=" background-color:  #22699c ; color: white;">
                   Do Pain Management Treatments and Interventional Pain Procedures Hurt?
 
 
@@ -819,21 +881,21 @@
     <!-- Start Contact Section -->
     <div id="contact-modal" class="modal">
       <div class="modal-content">
-        <span class="close-btn">&times;</span>
+        <!-- Removed the close button -->
+         <span class="close-btn">&times;</span> 
+    
         <section class="st-shape-wrap" id="contact">
           <div class="st-shape1"><img src="assets/img/shape/contact-shape1.svg" alt="shape1"></div>
           <div class="st-shape2"><img src="assets/img/shape/contact-shape2.svg" alt="shape2"></div>
           <div class="container">
             <div class="st-section-heading st-style1">
               <h2 class="st-section-heading-title">Book Your Appointment</h2>
-              <div class="st-section-heading-subtitle">
+              <div class="st-section-heading-subtitle" style="margin-top: 20px; margin-bottom: 20px;">
                 Why live another day with your pain? <br>
                 Choose relief and good health. Fill out our contact form.
               </div>
             </div>
-            <form method="POST"
-              action="https://script.google.com/macros/s/AKfycbxyBgQxIOOWJZTbgEhPFrYwTb9zKa39FZckyxD2EBqtPwJYBZdcMUxU332GnnR9rSZIag/exec"
-              id="appointment-form">
+            <form method="POST" action="https://script.google.com/macros/s/AKfycbxyBgQxIOOWJZTbgEhPFrYwTb9zKa39FZckyxD2EBqtPwJYBZdcMUxU332GnnR9rSZIag/exec" id="appointment-form">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="st-form-field st-style1">
@@ -863,13 +925,11 @@
                 <div class="col-lg-12">
                   <div class="st-form-field st-style1">
                     <label for="umsg">Message</label>
-                    <textarea cols="30" rows="10" id="umsg" name="umsg"
-                      placeholder="Write something here..."></textarea>
+                    <textarea cols="30" rows="10" id="umsg" name="umsg" placeholder="Write something here..."></textarea>
                   </div>
                 </div>
                 <div class="col-lg-12">
-                  <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="appointment-submit"
-                    name="submit">
+                  <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="appointment-submit" name="submit">
                     Book Appointment
                   </button>
                 </div>
@@ -879,72 +939,77 @@
         </section>
       </div>
     </div>
-    <section class="st-shape-wrap" id="contact">
+    
+
+    <section class="st-shape-wrap" id="contact-us">
+
       <div class="st-shape1"><img src="assets/img/shape/contact-shape1.svg" alt="shape1"></div>
       <div class="st-shape2"><img src="assets/img/shape/contact-shape2.svg" alt="shape2"></div>
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
-          <div class="st-section-heading st-style1">
-              <h2 class="st-section-heading-title">Contact Us</h2>
-              <div class="st-seperator"></div>
-              <div class="st-section-heading-subtitle">
-                  Reach out to us for any queries, and we will get back to you.
-              </div>
+        <div class="st-section-heading st-style1">
+          <h2 class="st-section-heading-title" style=" color:  #22699c ;">Contact Us</h2>
+          <div class="st-seperator"></div>
+          <div class="st-section-heading-subtitle">
+            Reach out to us for any queries, and we will get back to you.
           </div>
-          <div class="st-height-b40 st-height-lg-b40"></div>
+        </div>
+        <div class="st-height-b40 st-height-lg-b40"></div>
       </div>
       <div class="container">
-          <div class="row">
-              <div class="col-lg-10 offset-lg-1">
-                  <!-- Contact Form -->
-                  <form method="POST" action="https://script.google.com/macros/s/AKfycbxhfXd3S_3xljt7PUgoN4eTRnHtJNaPApFA6nQMEtoc2SEqKx62M6xx6ClgoqNGohvQrw/exec" name="contact-form">
-                      <div id="st-alert1"></div>
-                      <div class="row">
-                          <div class="col-lg-6">
-                              <div class="st-form-field st-style1">
-                                  <label for="your-name">Full Name</label>
-                                  <input type="text" name="your-name" placeholder="Your Name" required>
-                              </div>
-                          </div>
-                          <div class="col-lg-6">
-                              <div class="st-form-field st-style1">
-                                  <label for="your-number">Phone Number</label>
-                                  <input type="text" name="your-number" placeholder="Your Number" required>
-                              </div>
-                          </div>
-                          <div class="col-lg-6">
-                              <div class="st-form-field st-style1">
-                                  <label for="your-email">Email Address</label>
-                                  <input type="email" name="your-email" placeholder="example@gmail.com" required>
-                              </div>
-                          </div>
-                          <div class="col-lg-6">
-                              <div class="st-form-field st-style1">
-                                  <label for="udate">Booking Date</label>
-                                  <input name="udate" type="text" placeholder="dd/mm/yy">
-                                  <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
-                              </div>
-                          </div>
-                          <div class="col-lg-12">
-                              <div class="st-form-field st-style1">
-                                  <label for="message">Message</label>
-                                  <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
-                              </div>
-                          </div>
-                          <div class="col-lg-12">
-                              <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="submit">
-                                  Submit
-                              </button>
-                          </div>
-                      </div>
-                  </form>
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1">
+            <!-- Contact Form -->
+            <form method="POST"
+              action="https://script.google.com/macros/s/AKfycbxhfXd3S_3xljt7PUgoN4eTRnHtJNaPApFA6nQMEtoc2SEqKx62M6xx6ClgoqNGohvQrw/exec"
+              name="contact-form">
+              <div id="st-alert1"></div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label for="your-name">Full Name</label>
+                    <input type="text" name="your-name" placeholder="Your Name" required>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label for="your-number">Phone Number</label>
+                    <input type="text" name="your-number" placeholder="Your Number" required>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label for="your-email">Email Address</label>
+                    <input type="email" name="your-email" placeholder="example@gmail.com" required>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label for="udate">Booking Date</label>
+                    <input name="udate" type="text" placeholder="dd/mm/yy">
+                    <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="st-form-field st-style1">
+                    <label for="message">Message</label>
+                    <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="submit" style=" background-color:  #22699c ;">
+                    Submit
+                  </button>
+                </div>
               </div>
+            </form>
           </div>
+        </div>
       </div>
-  
+
       <div class="st-height-b120 st-height-lg-b80"></div>
-  </section>
-  
+    </section>
+
 
 
   </div>
@@ -956,7 +1021,7 @@
           <!-- .col -->
           <div class="col-lg-3">
             <div class="st-footer-widget">
-              <h2 class="st-footer-widget-title">Useful Links</h2>
+              <h2 class="st-footer-widget-title" style=" color:  #22699c ;">Useful Links</h2>
               <ul class="st-footer-widget-nav st-mp0">
                 <li><a href="#home"><i class="fas fa-chevron-right"></i>Home</a></li>
                 <li><a href="#about"><i class="fas fa-chevron-right"></i>About</a></li>
@@ -970,14 +1035,16 @@
 
           <div class="col-lg-3">
             <div class="st-footer-widget">
-              <h2 class="st-footer-widget-title">Contacts</h2>
+              <h2 class="st-footer-widget-title" style="color:  #22699c ;">Contacts</h2>
               <ul class="st-footer-contact-list st-mp0">
                 <li><span class="st-footer-contact-title">Address:</span> Plot no 99, plot no 99, Road No. 1, next to
                   chiranjeevi blood bank, Jubilee Hills, Hyderabad, Telangana 500033
                 </li>
-                <li><span class="st-footer-contact-title">Email:</span> <a href="mailto:avispainmanagement@gmail.com">avispainmanagement@gmail.com</a>
+                <li><span class="st-footer-contact-title">Email:</span> <a
+                    href="mailto:avispainmanagement@gmail.com">avispainmanagement@gmail.com</a>
                 </li>
-                <li><span class="st-footer-contact-title">Phone:</span> <a href="tel:+919154991961">+91 9154991961</a></li>
+                <li><span class="st-footer-contact-title">Phone:</span> <a href="tel:+919154991961">+91 9154991961</a>
+                </li>
               </ul>
             </div>
           </div><!-- .col -->
@@ -1030,31 +1097,42 @@
   <script src="assets/js/textRotate.min.js"></script>
   <script src="assets/js/select2.min.js"></script>
   <script src="assets/js/main.js"></script>
+ 
+
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const modal = document.getElementById('contact-modal');
-      const btn = document.getElementById('appointment-btn');
-      const closeBtn = document.querySelector('.close-btn');
+    // Get the modal and close button
+    var modal = document.getElementById("contact-modal");
+    var closeBtn = document.getElementsByClassName("close-btn")[0];
+    
+    // Show the modal when the page loads
+    window.onload = function() {
+      modal.style.display = "block";
+    };
+    
+    // Close the modal if the user clicks anywhere outside the modal content
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+    
+    // Close the modal when the close button (cross mark) is clicked
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    };
+    </script>
+    
 
-      btn.addEventListener('click', function () {
-        modal.style.display = 'block';
-      });
+  <script>
+    function toggleColor(element) {
+      // Get the current background color
+      const currentColor = element.style.backgroundColor;
 
-      closeBtn.addEventListener('click', function () {
-        modal.style.display = 'none';
-      });
-
-      window.addEventListener('click', function (event) {
-        if (event.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
-
-
-
-
+      // Toggle between black and white
+      element.style.backgroundColor = currentColor === "black" ? "white" : "black";
+    }
   </script>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const sections = document.querySelectorAll('section');

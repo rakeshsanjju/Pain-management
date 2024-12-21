@@ -171,31 +171,17 @@
           <div class="st-main-header-left">
             <a class="st-site-branding" href="index.html"><img src="assets/img/logo.png" alt="Nischinto""></a>
           </div>
-          <div class=" st-main-header-right">
-              <div class="st-nav">
-                <ul class="st-nav-list st-onepage-nav">
-                  <li><a href="#home" class="st-smooth-move">Home</a></li>
-                  <li><a href="#about" class="st-smooth-move">About</a></li>
-                  <li><a href="#Treatments" class="st-smooth-move">Services</a></li>
-                  <li><a href="#doctors" class="st-smooth-move">Our Doctor</a></li>
-
-                  <li><a href="#testimony" class="st-smooth-move">Testimonials</a></li>
-
-
-                  <!-- <li class="menu-item-has-children"><a href="#blog" class="st-smooth-move">Blog</a>
-                  <ul>
-                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                    <li><a href="blog-no-sidebar.html">Blog No Sidebar</a></li>
-                    <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
-                    <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
-                    <li><a href="blog-details-no-sidebar.html">Blog Details No Sidebar</a></li>
-                  </ul>
-                </li> -->
-                  <li><a href="#contact-us" class="st-smooth-move">Contact</a></li>
-                </ul>
-              </div>
-          </div>
+          <div class="st-main-header-right">
+            <div class="st-nav">
+              <ul class="st-nav-list st-onepage-nav">
+                <li><a href="#home" class="st-smooth-move" data-target="home">Home</a></li>
+                <li><a href="#about" class="st-smooth-move" data-target="about">About</a></li>
+                <li><a href="#before" class="st-smooth-move" data-target="before">Services</a></li>
+                <li><a href="#gallery" class="st-smooth-move" data-target="gallery">Our Doctors</a></li>
+                <li><a href="#faq" class="st-smooth-move" data-target="faq">Testimonials</a></li>
+                <li><a href="#contact-us" class="st-smooth-move" data-target="contact">Contact</a></li>
+              </ul>
+            </div>
         </div>
       </div>
     </div>
@@ -435,7 +421,7 @@
     <!-- End About Seciton -->
 
     <!-- Start department Section -->
-    <section id="Treatments">
+    <section id="before">
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
         <div class="st-section-heading st-style1">
@@ -657,7 +643,7 @@
     <!-- End Service Section -->
 
     <!-- Start Team Section -->
-    <section id="doctors">
+    <section id="gallery">
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
         <div class="st-section-heading st-style1">
@@ -722,7 +708,7 @@
 
 
     <!-- Start Testimonial Seciton -->
-    <section id="testimony">
+    <section id="faq">
       <div class="st-height-b120 st-height-lg-b80"></div>
       <div class="container">
         <div class="st-section-heading st-style1">
@@ -1162,6 +1148,23 @@
     });
 
   </script>
+
+<script>
+  document.querySelectorAll('.st-smooth-move').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();  // Prevent default anchor behavior
+      
+      // Get the section id from the data-target attribute
+      const targetSection = this.getAttribute('data-target');
+
+      // Smoothly scroll to the target section
+      document.querySelector(`#${targetSection}`).scrollIntoView({ behavior: 'smooth' });
+
+      // Change the URL without reloading the page
+      history.pushState(null, null, `/${targetSection}`);
+    });
+  });
+</script>
 </body>
 
 </html>

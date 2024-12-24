@@ -101,6 +101,46 @@
   }
 }
 
+#gallery .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  /* Image Responsiveness */
+  .specialist-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* Text Responsiveness */
+  .specialist-info {
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Flexbox for Alignment */
+  #Neurology .row {
+    display: flex;
+    flex-direction: column; /* Default for mobile */
+  }
+
+  /* Responsive Adjustments */
+  @media (min-width: 768px) {
+    #Neurology .row {
+      flex-direction: row; /* Side-by-side for larger screens */
+    }
+
+    .specialist-image, .specialist-info {
+      flex: 1;
+    }
+
+    .specialist-info {
+      text-align: left;
+      padding: 20px;
+    }
+  }
+
 
 </style>
 
@@ -212,9 +252,16 @@
               treatments. <br>
               Visit Avis for end-to-end pain management treatment.</div>
           </div>
-          <div class="st-hero-btn">
-            <a href="#contact-us" class="st-btn st-style1 st-color1" id="appointment-btn" style="background-color: #22699c ;">Appointment</a>
+          <div class="st-hero-btn-container" style="display: flex; gap: 10px; align-items: center; margin-top: 20px;">
+            <div class="st-hero-btn">
+              <a href="#contact-us" class="st-btn st-style1 st-color1" id="appointment-btn" style="background-color: #22699c;">Appointment</a>
+            </div>
+            <div class="st-hero-btn">
+              <a href="tel:+91 9154991961" class="st-btn st-style1 st-color1" id="appointment-btn" style="background-color: #22699c;">Call Now</a>
+            </div>
           </div>
+          
+          
 
         </div>
         <div class="st-hero-social-group">
@@ -270,7 +317,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="st-iconbox st-style1">
-              <div class="st-iconbox-icon st-purple-box">
+              <div class="st-iconbox-icon st-green-box">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                   y="0px" viewBox="0 0 512 512" xml:space="preserve">
                   <g>
@@ -357,17 +404,14 @@
             <div class="st-iconbox st-style1">
               <div class="st-iconbox-icon st-green-box">
 
-                <svg enable-background="new 0 0 511.988 511.988" viewBox="0 0 511.988 511.988"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                    <path
-                      d="m511.988 227.658c0-60.096-23.44-116.593-66.004-159.085-42.559-42.489-99.142-65.888-159.327-65.888-62.806 0-122.954 26.329-165.547 72.348-7.616-2.821-15.75-4.293-24.108-4.293-.001 0 .001 0 0 0-18.539 0-35.977 7.24-49.098 20.385-.274.275-.532.565-.772.87l-15.678 19.868c-14.987 18.993-25.114 41.58-29.285 65.318-4.207 23.943-2.269 48.627 5.605 71.384 5.707 16.494 12.887 29.151 21.342 37.622l193.83 194.143c6.704 6.717 16.109 12.686 27.956 17.74 17.668 7.539 36.431 11.233 55.167 11.232 31.195-.001 62.309-10.246 88.105-30.047l22.298-17.116c.348-.268.679-.558.989-.868 17.59-17.623 23.745-42.431 18.464-65.082 48.367-42.732 76.063-104.032 76.063-168.531zm-108.241 219.036-21.75 16.696c-35.571 27.305-82.795 33.545-123.246 16.285-9.479-4.044-16.763-8.578-21.65-13.474l-193.831-194.144c-6.301-6.313-11.885-16.418-16.596-30.032-13.829-39.97-6.173-83.997 20.48-117.773l15.301-19.391c9.295-9.111 21.541-14.121 34.546-14.121 13.19 0 25.599 5.155 34.941 14.514l32.021 32.081c18.41 18.444 18.41 48.454-.002 66.9l-35.863 35.951c-3.895 3.905-3.894 10.226.003 14.128l126.446 126.631c1.876 1.878 4.421 2.934 7.076 2.934h.003c2.656 0 5.202-1.058 7.077-2.938l35.86-35.948c8.919-8.936 20.767-13.857 33.36-13.857s24.44 4.921 33.36 13.857l32.021 32.081c19.135 19.17 19.282 50.268.443 69.62zm-15.287-112.803-3.021-3.026c-12.698-12.722-29.573-19.728-47.515-19.728-17.943 0-34.817 7.006-47.518 19.73l-28.786 28.857-112.313-112.479 28.812-28.883c25.359-25.407 26.159-66.243 2.401-92.624 27.711-28.735 66.034-45.095 106.137-45.095 81.209 0 147.276 65.95 147.276 147.014 0 40.189-16.496 78.547-45.473 106.234zm29.001 29.055-14.869-14.897c32.721-31.428 51.341-74.875 51.341-120.392 0-92.092-75.04-167.014-167.276-167.014-45.385 0-88.762 18.449-120.206 50.873l-20.353-20.391c-2.191-2.195-4.502-4.225-6.918-6.084 38.582-39.723 91.887-62.356 147.477-62.356 113.22 0 205.331 91.95 205.331 204.972 0 56.381-23.234 110.084-64.048 148.736-2.866-4.796-6.359-9.319-10.479-13.447z" />
-                    <path
-                      d="m355.669 228.279h-1.121c.121-21.045.184-43.537-.076-46.664-.586-7.056-4.823-12.807-10.796-14.65-5.923-1.828-12.211.471-16.822 6.152-4.979 6.136-27.961 47.742-34.886 60.347-1.702 3.098-1.642 6.864.158 9.907 1.8 3.042 5.072 4.908 8.606 4.908h33.681c-.041 5.609-.084 10.986-.125 15.844-.047 5.523 4.391 10.038 9.914 10.085.029.001.059.001.088.001 5.482 0 9.951-4.421 9.997-9.914.026-2.999.074-8.807.128-16.016h1.253c5.523 0 10-4.477 10-10 .001-5.523-4.477-10-9.999-10zm-21.125 0h-16.853c6.251-11.227 12.345-21.998 16.965-29.943-.004 8.206-.048 18.878-.112 29.943z" />
-                    <path
-                      d="m277.116 256.998c-8.794.111-18.124.184-25.861.199 4.857-6.523 11.614-15.793 20.75-28.902 5.593-8.025 9.24-15.609 10.84-22.541.375-1.584.688-4.6.689-5.647.018-17.91-14.528-32.48-32.385-32.48-15.444 0-28.809 11.02-31.779 26.204-1.06 5.42 2.474 10.673 7.895 11.733 5.419 1.059 10.673-2.475 11.733-7.895 1.138-5.819 6.248-10.042 12.151-10.042 6.649 0 12.09 5.307 12.373 11.938l-.272 2.136c-1.091 4.338-3.664 9.436-7.654 15.16-13.857 19.883-22.126 30.756-26.567 36.598-5.489 7.217-7.994 10.511-6.29 16.041 1.001 3.249 3.461 5.744 6.749 6.844 1.337.448 2.619.877 19.628.877 6.676 0 15.777-.066 28.251-.224 5.522-.069 9.943-4.603 9.873-10.125-.068-5.523-4.619-9.93-10.124-9.874z" />
-                  </g>
+                <svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512">
+                  <!-- Background Image -->
+                  <image x="0" y="0" width="512" height="512" xlink:href="assets/img/surgery.png"></image>
+                
+                  <!-- Existing SVG Paths -->
+                 
                 </svg>
+                
               </div>
               <h2 class="st-iconbox-title" style=" color:  #22699c ;">Non-Surgical Approach</h2>
               <div class="st-iconbox-text">Experience effective pain relief without the need for invasive procedures or
@@ -378,32 +422,14 @@
           <div class="col-lg-4">
             <div class="st-iconbox st-style1">
               <div class="st-iconbox-icon st-red-box">
-                <svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                    <g>
-                      <g>
-                        <path
-                          d="m256 38.397c5.522 0 10-4.477 10-10v-18.397c0-5.523-4.478-10-10-10-5.523 0-10 4.477-10 10v18.397c0 5.523 4.477 10 10 10z" />
-                        <path
-                          d="m342.609 62.764c1.556.88 3.246 1.298 4.915 1.298 3.486 0 6.874-1.827 8.713-5.079l9.655-17.069c2.719-4.807 1.026-10.908-3.78-13.628-4.806-2.718-10.909-1.027-13.628 3.781l-9.655 17.069c-2.719 4.807-1.026 10.908 3.78 13.628z" />
-                        <path
-                          d="m409.789 128.753c1.634 0 3.292-.401 4.823-1.247l18.457-10.187c4.835-2.668 6.592-8.752 3.923-13.587-2.669-4.836-8.754-6.592-13.587-3.923l-18.457 10.187c-4.835 2.668-6.592 8.752-3.923 13.587 1.824 3.304 5.241 5.17 8.764 5.17z" />
-                        <path
-                          d="m455.027 199.147h-19.524c-5.522 0-10 4.477-10 10s4.478 10 10 10h19.524c5.522 0 10-4.477 10-10s-4.477-10-10-10z" />
-                        <path
-                          d="m155.763 58.983c1.84 3.252 5.227 5.079 8.713 5.079 1.668 0 3.359-.418 4.915-1.298 4.807-2.719 6.499-8.82 3.78-13.627l-9.655-17.069c-2.721-4.808-8.821-6.499-13.628-3.781-4.807 2.719-6.499 8.82-3.78 13.628z" />
-                        <path
-                          d="m78.931 117.319 18.457 10.187c1.532.846 3.188 1.247 4.823 1.247 3.523 0 6.94-1.867 8.764-5.17 2.669-4.835.912-10.918-3.923-13.587l-18.457-10.187c-4.835-2.668-10.918-.913-13.587 3.923-2.669 4.835-.912 10.918 3.923 13.587z" />
-                        <path
-                          d="m76.497 219.147c5.522 0 10-4.477 10-10s-4.478-10-10-10h-19.524c-5.522 0-10 4.477-10 10s4.478 10 10 10z" />
-                        <path
-                          d="m448.091 446.815h-24.502v-61.428c0-5.523-4.478-10-10-10h-20.807v-171.08c0-75.405-61.347-136.752-136.813-136.752-75.405 0-136.752 61.347-136.752 136.752v171.081h-20.806c-5.522 0-10 4.477-10 10v61.428h-24.502c-5.522 0-10 4.477-10 10v45.184c0 5.523 4.478 10 10 10h384.182c5.523 0 10-4.477 10-10v-45.185c0-5.522-4.478-10-10-10zm-308.873-242.508c0-64.377 52.375-116.752 116.813-116.752 64.377 0 116.752 52.374 116.752 116.752v171.081h-86.683v-94.379c14.468-9.871 23.231-26.229 23.231-44.02 0-29.396-23.924-53.311-53.331-53.311s-53.331 23.915-53.331 53.311c0 17.79 8.764 34.148 23.232 44.02v94.379h-86.683zm101.326 62.204c-11.025-5.781-17.875-17.093-17.875-29.522 0-18.368 14.952-33.311 33.331-33.311s33.331 14.943 33.331 33.311c0 12.43-6.85 23.742-17.875 29.522-3.293 1.727-5.356 5.138-5.356 8.856v100.02h-20.2v-100.02c0-3.719-2.063-7.13-5.356-8.856zm197.547 225.489h-364.182v-25.185h136.885c5.523 0 10-4.477 10-10s-4.477-10-10-10h-102.383v-51.428h295.178v51.428h-102.383c-5.522 0-10 4.477-10 10s4.478 10 10 10h136.885z" />
-                        <path
-                          d="m265.42 452.99c-1.61-3.865-5.581-6.387-9.771-6.16-4.161.225-7.816 3.098-9.029 7.08-1.212 3.978.243 8.471 3.606 10.938 3.284 2.409 7.764 2.601 11.23.458 4.105-2.538 5.822-7.856 3.964-12.316z" />
-                      </g>
-                    </g>
-                  </g>
+                <svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512">
+                  <!-- Background Image -->
+                  <image x="0" y="0" width="512" height="512" xlink:href="assets/img/palliative.png"></image>
+                
+                  <!-- Existing SVG Paths -->
+                 
                 </svg>
+                
               </div>
               <h2 class="st-iconbox-title" style=" color:  #22699c ;">Fastest Path to Relief</h2>
               <div class="st-iconbox-text">Our specialised treatments ensure quick results so you can get back to living
@@ -631,7 +657,7 @@
             </div>
           </div><!-- .st-tabs -->
         </div>
-        <div class="st-height-b120 st-height-lg-b80"></div>
+        
     </section>
     <hr>
 
@@ -644,57 +670,50 @@
 
     <!-- Start Team Section -->
     <section id="gallery">
-      <div class="st-height-b120 st-height-lg-b80"></div>
+      
       <div class="container">
         <div class="st-section-heading st-style1">
-          <h2 class="st-section-heading-title" style="margin-left: 80px;  color:  #22699c ;">Meet Our Specialist</h2>
-          <!-- <div class="st-seperator">
-            <div class="st-seperator-left wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-            <div class="st-seperator-center"><img src="assets/img/icons/4.png" alt="icon"></div>
-            <div class="st-seperator-right wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-          </div> -->
-          <!-- <div class="st-section-heading-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. <br>
-            Lorem Ipsum the industry's standard dummy text.</div>
-        </div> -->
-          <div class="st-height-b40 st-height-lg-b40"></div>
+          <h2 class="st-section-heading-title" style="margin-left: 10px; margin-top: 20px; margin-bottom: 20px; color: #22699c; text-align: center;">
+            Meet Our Specialist
+          </h2>
         </div>
         <div id="Neurology">
           <div class="st-imagebox st-style2">
             <div class="row"
-              style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
-              <div class="col-lg-6" style="width: 100%; max-width: 400px; margin-bottom: 20px; ">
-                <div class="st-imagebox-img" style="margin: 0 auto;"><img src="assets/img/doctor.png " alt="service"
-                  style="max-width: 520px; height: 470px;"  ></div>
-                <div class="st-height-b0 st-height-lg-b30"></div>
+              style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px;">
+              <!-- Image Section -->
+              <div class="col-lg-6 specialist-image">
+                <div class="st-imagebox-img">
+                  <img src="assets/img/doctor.png" alt="service" style="max-width: 100%; height: auto; border-radius: 10px;">
+                </div>
               </div>
-              <div class="col-lg-6" style="width: 100%; max-width: 550px;">
-                <div class="st-vertical-middle">
-                  <div class="st-vertical-middle-in">
-                    <div class="st-imagebox-info">
-                      <h2 class="st-imagebox-title" style="font-size: 24px; line-height: 1.4; margin-bottom: 15px;">
-                        <span style=" color:  #22699c ;">Dr. Ershad Mohammed Sohail </span>
-                      </h2>
-                      <h4 class="st-imagebox-subtitle" style="font-size: 18px; margin-bottom: 15px;">
-                        Dr. Ershad Mohammed Sohail is a highly skilled Pain Management Specialist with over 9 years of
-                        experience in diagnosing and treating a wide range of acute and chronic pain conditions.
-                      </h4>
-                      <div class="st-imagebox-text" style="font-size: 16px; line-height: 1.6;">
-                        Holding an MBBS and MD from the prestigious Dr. NTR University of Health Sciences, he has
-                        further specialized with a Fellowship in Interventional Pain Management (FIPM), equipping him
-                        with advanced expertise in non-surgical pain relief techniques.
-                      </div>
-                      <div class="st-imagebox-text" style="font-size: 16px; line-height: 1.6;">
-                        With a patient-focused approach, Dr. Sohail is dedicated to providing comprehensive care tailored to each individual’s unique needs. His extensive knowledge and hands-on experience in the latest pain management modalities make him a trusted name for conditions such as sciatica, neck and back pain and neuropathic pain.
-                      </div>
-                    </div>
+              <!-- Text Section -->
+              <div class="col-lg-6 specialist-info">
+                <div class="st-imagebox-info">
+                  <h2 class="st-imagebox-title" style="font-size: 20px; margin-bottom: 10px; text-align: center;">
+                    <span style="color: #22699c;">Dr. Ershad Mohammed Sohail</span>
+                  </h2>
+                  <h4 class="st-imagebox-subtitle" style="font-size: 16px; margin-bottom: 15px; text-align: center;">
+                    Dr. Ershad Mohammed Sohail is a highly skilled Pain Management Specialist with over 9 years of
+                    experience in diagnosing and treating a wide range of acute and chronic pain conditions.
+                  </h4>
+                  <div class="st-imagebox-text" style="font-size: 14px; line-height: 1.6; margin-bottom: 10px;">
+                    Holding an MBBS and MD from the prestigious Dr. NTR University of Health Sciences, he has further
+                    specialized with a Fellowship in Interventional Pain Management (FIPM), equipping him with advanced
+                    expertise in non-surgical pain relief techniques.
+                  </div>
+                  <div class="st-imagebox-text" style="font-size: 14px; line-height: 1.6;">
+                    With a patient-focused approach, Dr. Sohail is dedicated to providing comprehensive care tailored to
+                    each individual’s unique needs. His extensive knowledge and hands-on experience in the latest pain
+                    management modalities make him a trusted name for conditions such as sciatica, neck and back pain, and
+                    neuropathic pain.
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      
+      </div>
     </section>
 
     <!-- End Team Section -->
@@ -875,53 +894,66 @@
           <div class="st-shape2"><img src="assets/img/shape/contact-shape2.svg" alt="shape2"></div>
           <div class="container">
             <div class="st-section-heading st-style1">
-              <h2 class="st-section-heading-title">Book Your Appointment</h2>
-              <div class="st-section-heading-subtitle" style="margin-top: 20px; margin-bottom: 20px;">
-                Why live another day with your pain? <br>
-                Choose relief and good health. Fill out our contact form.
+              <h2 class="st-section-heading-title" style=" color:  #22699c ;">Contact Us</h2>
+              <div class="st-seperator"></div>
+              <div class="st-section-heading-subtitle">
+                Reach out to us for any queries, and we will get back to you.
               </div>
             </div>
-            <form method="POST" action="https://script.google.com/macros/s/AKfycbxyBgQxIOOWJZTbgEhPFrYwTb9zKa39FZckyxD2EBqtPwJYBZdcMUxU332GnnR9rSZIag/exec" id="appointment-form">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Mr./Mrs." required>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="phone">Phone Number</label>
-                    <input type="text" id="phone" name="phone" placeholder="+91 1417 234 234" required>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="udate">Booking Date</label>
-                    <input name="udate" type="text" id="udate" placeholder="dd/mm/yy">
-                    <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="st-form-field st-style1">
-                    <label for="umsg">Message</label>
-                    <textarea cols="30" rows="10" id="umsg" name="umsg" placeholder="Write something here..."></textarea>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="appointment-submit" name="submit">
-                    Book Appointment
-                  </button>
-                </div>
-              </div>
-            </form>
+            <div class="st-height-b40 st-height-lg-b40"></div>
           </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 offset-lg-1">
+                <!-- Contact Form -->
+                <form method="POST"
+                action="https://script.google.com/macros/s/AKfycbxhfXd3S_3xljt7PUgoN4eTRnHtJNaPApFA6nQMEtoc2SEqKx62M6xx6ClgoqNGohvQrw/exec"
+                name="contact-form"
+                onsubmit="return handleFormSubmit(event)">
+                  <div id="st-alert1"></div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="st-form-field st-style1">
+                        <label for="your-name">Full Name</label>
+                        <input type="text" name="your-name" placeholder="Your Name" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="st-form-field st-style1">
+                        <label for="your-number">Phone Number</label>
+                        <input type="text" name="your-number" placeholder="Your Number" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="st-form-field st-style1">
+                        <label for="your-email">Email Address</label>
+                        <input type="email" name="your-email" placeholder="example@gmail.com" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="st-form-field st-style1">
+                        <label for="udate">Booking Date</label>
+                        <input name="udate" type="text" placeholder="dd/mm/yy">
+                        <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="st-form-field st-style1">
+                        <label for="message">Message</label>
+                        <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="submit" style=" background-color:  #22699c ;">
+                        Book Appointment
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+         
         </section>
       </div>
     </div>
@@ -947,8 +979,9 @@
           <div class="col-lg-10 offset-lg-1">
             <!-- Contact Form -->
             <form method="POST"
-              action="https://script.google.com/macros/s/AKfycbxhfXd3S_3xljt7PUgoN4eTRnHtJNaPApFA6nQMEtoc2SEqKx62M6xx6ClgoqNGohvQrw/exec"
-              name="contact-form">
+            action="https://script.google.com/macros/s/AKfycbxhfXd3S_3xljt7PUgoN4eTRnHtJNaPApFA6nQMEtoc2SEqKx62M6xx6ClgoqNGohvQrw/exec"
+            name="contact-form"
+            onsubmit="return handleFormSubmit(event)">
               <div id="st-alert1"></div>
               <div class="row">
                 <div class="col-lg-6">
@@ -984,7 +1017,7 @@
                 </div>
                 <div class="col-lg-12">
                   <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="submit" style=" background-color:  #22699c ;">
-                    Submit
+                    Book Appointment
                   </button>
                 </div>
               </div>
@@ -1164,6 +1197,33 @@
       history.pushState(null, null, `/${targetSection}`);
     });
   });
+</script>
+<script>
+  function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.result === 'success') {
+          // Redirect to thank you page
+          window.location.href = 'thankyou.html';
+        } else {
+          alert('Error submitting form: ' + data.error);
+        }
+      })
+      .catch(error => {
+        alert('Unexpected error: ' + error.message);
+      });
+
+    return false; // Prevent actual form submission
+  }
 </script>
 </body>
 

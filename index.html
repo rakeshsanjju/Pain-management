@@ -306,17 +306,28 @@ style="position: relative; min-height: 700px; background-image: url('assets/img/
  <div class="slick-wrapper">
    <div class="slick-slide-in">
      <div class="st-hero-img">
-       <img src="assets/hero-img1.webp" alt="Hero img">
+       <img src="assets/hero-img1.webp" alt="Hero img" loading="lazy"
+       width="600" 
+       height="400"/>
      </div>
    </div>
    <div class="slick-slide-in">
      <div class="st-hero-img">
-       <img src="assets/img/hero-img.webp" alt="Hero img">
+       <img src="assets/img/hero-img.webp" alt="Hero img" loading="lazy"
+       width="600" 
+       height="400" />
      </div>
    </div>
    <div class="slick-slide-in">
      <div class="st-hero-img">
-       <img src="assets/img/hero-img2.webp" alt="Hero img">
+       <img 
+  src="assets/img/hero-img2.webp" 
+  alt="Hero img" 
+  loading="lazy"
+  width="600" 
+  height="400"
+/>
+
      </div>
    </div>
  </div>
@@ -1265,6 +1276,8 @@ style="position: relative; min-height: 700px; background-image: url('assets/img/
       return false; // Prevent actual form submission
     }
   </script>
+  <script src="slick.min.js" defer></script>
+
 </body>
 
 </html>

@@ -58,6 +58,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print"
     onload="this.media='all'">
 
+<!-- Preconnect Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<!-- Async Load CSS -->
+<link rel="preload" href="css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="css/main.min.css"></noscript>
 
 
 
@@ -763,20 +771,8 @@
               <!-- Image Section -->
               <div class="col-lg-6 specialist-image">
                 <div class="st-imagebox-img">
-                  <!-- ✅ Responsive Doctor Image with Optimized Sizes -->
-                  <picture>
-                    <!-- Mobile image (max-width: 480px) -->
-                    <source srcset="assets/img/pics-360x270.webp" media="(max-width: 480px)">
-
-                    <!-- Tablet image (max-width: 768px) -->
-                    <source srcset="assets/img/pics-600x450.webp" media="(max-width: 768px)">
-
-                    <!-- Default (desktop and large screens) -->
-                    <img src="assets/img/pics.webp" alt="Doctor Image" width="800" height="600"
-                      style="max-width: 100%; height: auto; border-radius: 10px;" fetchpriority="high">
-                  </picture>
-
-
+                  <img src="assets/img/pics.webp" alt="service"
+                    style="max-width: 100%; height: auto; border-radius: 10px;">
                 </div>
               </div>
               <!-- Text Section -->

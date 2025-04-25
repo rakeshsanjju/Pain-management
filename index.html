@@ -28,25 +28,35 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
 
   <!-- Bootstrap CSS -->
-<link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="css/bootstrap.min.css"></noscript>
+  <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </noscript>
 
-<!-- FontAwesome CSS -->
-<link rel="preload" href="css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="css/fontawesome.css"></noscript>
+  <!-- FontAwesome CSS -->
+  <link rel="preload" href="css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="css/fontawesome.css">
+  </noscript>
 
-<!-- Custom CSS -->
-<link rel="preload" href="css/textRotate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="css/textRotate.css"></noscript>
+  <!-- Custom CSS -->
+  <link rel="preload" href="css/textRotate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="css/textRotate.css">
+  </noscript>
 
-<link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="css/style.css"></noscript>
+  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="css/style.css">
+  </noscript>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print"
+    onload="this.media='all'">
 
 
 
@@ -564,7 +574,12 @@
               <div class="st-imagebox st-style2">
                 <div class="row">
                   <div class="col-lg-6">
-                    <div class="st-imagebox-img"><img src="assets/img/crutches.webp" alt="service"></div>
+                    <div class="st-imagebox-img">
+                      <!-- Fixing layout shift for service image -->
+                      <img src="assets/img/crutches.webp" alt="service" width="300" height="200"
+                        style="width:90%; height:auto; border-radius: 0px;" loading="lazy">
+
+                    </div>
                     <div class="st-height-b0 st-height-lg-b30"></div>
                   </div>
                   <div class="col-lg-6">

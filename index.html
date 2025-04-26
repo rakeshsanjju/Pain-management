@@ -118,22 +118,30 @@
   }
 
   /* The Close Button */
-  .close-btn {
-    color: #aaa;
-    font-size: 30px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    cursor: pointer;
-  }
+  /* Fix the Close Button Hover & Click */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  text-align: center;
+  border-radius: 50%;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+  z-index: 10001;
+}
 
-  .close-btn:hover,
-  .close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+.close-btn:hover,
+.close-btn:focus {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
 
   /* Styling for the scrolling text */
   .st-section-heading-subtitle {
@@ -840,7 +848,7 @@
 
                       </div>
                     </div>
-                    <div class="st-testimonial-text">After months of neck pain, Dr.Sohail’s treatment gave me relief
+                    <div class="st-testimonial-text"> After months of neck pain, Dr. Rajah V Koppala treatment gave me relief
                       within a few days. </div>
                     <div class="st-quote"><i class="fas fa-quote-right"></i></div>
                   </div>

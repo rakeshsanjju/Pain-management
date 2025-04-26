@@ -57,7 +57,9 @@
     backToTop();
     stickyFooter();
     formValidation();
-    appointmentForm();
+    // appointmentForm();
+    updateYear();
+    getUTMparams();
     slickInit();
     progressBarInit();
     pricingTableInit();
@@ -437,65 +439,65 @@
   }
 
   // Appointment Form
-  function appointmentForm() {
-    if ($.exists('#appointment-form #appointment-submit')) {
-      $('#st-alert1').hide();
-      $('#appointment-form #appointment-submit').on('click', function () {
-        var uname = $('#uname').val();
-        var uemail = $('#uemail').val();
-        var unumber = $('#unumber').val();
-        var udate = $('#udate').val();
-        var udepartment = $('#udepartment').val();
-        var udoctor = $('#udoctor').val();
-        var umsg = $('#umsg').val();
-        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  // function appointmentForm() {
+  //   if ($.exists('#appointment-form #appointment-submit')) {
+  //     $('#st-alert1').hide();
+  //     $('#appointment-form #appointment-submit').on('click', function () {
+  //       var uname = $('#uname').val();
+  //       var uemail = $('#uemail').val();
+  //       var unumber = $('#unumber').val();
+  //       var udate = $('#udate').val();
+  //       var udepartment = $('#udepartment').val();
+  //       var udoctor = $('#udoctor').val();
+  //       var umsg = $('#umsg').val();
+  //       var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-        if (!regex.test(uemail)) {
-          $('#st-alert1').fadeIn().html('<div class="alert alert-danger"><strong>Warning!</strong> Please Enter Valid Email.</div>');
-          return false;
-        }
+  //       if (!regex.test(uemail)) {
+  //         $('#st-alert1').fadeIn().html('<div class="alert alert-danger"><strong>Warning!</strong> Please Enter Valid Email.</div>');
+  //         return false;
+  //       }
 
-        uname = $.trim(uname);
-        uemail = $.trim(uemail);
-        unumber = $.trim(unumber);
-        udate = $.trim(udate);
-        udepartment = $.trim(udepartment);
-        udoctor = $.trim(udoctor);
-        umsg = $.trim(umsg);
+  //       uname = $.trim(uname);
+  //       uemail = $.trim(uemail);
+  //       unumber = $.trim(unumber);
+  //       udate = $.trim(udate);
+  //       udepartment = $.trim(udepartment);
+  //       udoctor = $.trim(udoctor);
+  //       umsg = $.trim(umsg);
 
-        if (uname != '' && uemail != '' && umsg != '') {
-          var values = "uname=" + uname +
-            "&uemail=" + uemail +
-            "&unumber=" + unumber +
-            "&udate=" + udate +
-            "&udepartment=" + udepartment +
-            "&udoctor=" + udoctor +
-            "&umsg=" + umsg;
-          $.ajax({
-            type: "POST",
-            url: "assets/php/appointment.php",
-            data: values,
-            success: function () {
-              $('#uname').val('');
-              $('#uemail').val('');
-              $('#unumber').val('');
-              $('#udepartment').val('');
-              $('#udoctor').val('');
-              $('#umsg').val('');
+  //       if (uname != '' && uemail != '' && umsg != '') {
+  //         var values = "uname=" + uname +
+  //           "&uemail=" + uemail +
+  //           "&unumber=" + unumber +
+  //           "&udate=" + udate +
+  //           "&udepartment=" + udepartment +
+  //           "&udoctor=" + udoctor +
+  //           "&umsg=" + umsg;
+  //         $.ajax({
+  //           type: "POST",
+  //           url: "assets/php/appointment.php",
+  //           data: values,
+  //           success: function () {
+  //             $('#uname').val('');
+  //             $('#uemail').val('');
+  //             $('#unumber').val('');
+  //             $('#udepartment').val('');
+  //             $('#udoctor').val('');
+  //             $('#umsg').val('');
 
-              $('#st-alert1').fadeIn().html('<div class="alert alert-success"><strong>Success!</strong> Appointment has been sent successfully.</div>');
-              setTimeout(function () {
-                $('#st-alert1').fadeOut('slow');
-              }, 4000);
-            }
-          });
-        } else {
-          $('#st-alert1').fadeIn().html('<div class="alert alert-danger"><strong>Warning!</strong> All fields are required.</div>');
-        }
-        return false;
-      });
-    }
-  }
+  //             $('#st-alert1').fadeIn().html('<div class="alert alert-success"><strong>Success!</strong> Appointment has been sent successfully.</div>');
+  //             setTimeout(function () {
+  //               $('#st-alert1').fadeOut('slow');
+  //             }, 4000);
+  //           }
+  //         });
+  //       } else {
+  //         $('#st-alert1').fadeIn().html('<div class="alert alert-danger"><strong>Warning!</strong> All fields are required.</div>');
+  //       }
+  //       return false;
+  //     });
+  //   }
+  // }
 
   /*--------------------------------------------------------------
     13. Mailchimp start
@@ -687,6 +689,141 @@
       });
     }
   }
+
+
+
+     //  update year dynamically
+    
+     function updateYear(cls) {
+      let currentYear = jQuery(cls);
+      let date = new Date();
+      let year = date.getFullYear();
+      currentYear.text(year);
+  }
+
+  updateYear('.currentYear')
+//UPdate UTM values
+
+function getUTMparams(){
+  var params= {};
+  var queryStrings = window.location.search.substring(1);
+  var regex = /([^&=]+)=([^&]*)/g, m;
+    while ((m = regex.exec(queryStrings)) !== null) {
+      params[decodeURIComponent(m[1])]=decodeURIComponent(m[2]);
+  }
+  return params;
+}
+
+
+var utmParams = getUTMparams();
+
+// Setting utm params to hidden fields
+
+[
+  'utm_campaign', 'keyword', 'matchtype', 'creative',
+  'target', 'placement', 'device', 'utm_adgroup',
+  'utm_source', 'campaign_type', 'gclid', 'utm_term'
+].forEach(param => {
+  let field = jQuery(`#${param}`);
+  if (field.length) field.val(utmParams[param] || '');
+});
+
+
+
+
+// form validation and submission
+
+  jQuery('#submitBtn').click(function (e) {
+  e.preventDefault(); 
+  
+  var errorArray = [];
+  let submit = true; 
+  jQuery('#bookingForm input:not([type="hidden"]), #bookingForm textarea').each(function () {
+      var inputField = jQuery(this);
+      var fieldValue = inputField.val().trim();
+      
+      console.log("Field:", inputField.attr('id'), "Value:", fieldValue); // Debugging
+
+      if (fieldValue === "") {
+          errorArray.push(inputField); 
+          inputField.css("border", "3px solid red"); 
+          submit = false; 
+      }
+
+      if (inputField.attr('id') === "email" && fieldValue !== "") {
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(fieldValue)) {
+              errorArray.push(inputField); 
+              inputField.css("border", "3px solid red"); 
+              submit = false; 
+          }
+      }
+
+      if (inputField.attr('id') === 'phone' && fieldValue !== "") {
+          if (!/^\d+$/.test(fieldValue)) {
+              errorArray.push(inputField); 
+              inputField.css("border", "3px solid red"); 
+              submit = false; 
+          }
+          
+          if (fieldValue.length < 10 || fieldValue.length > 12) {
+              errorArray.push(inputField); 
+              inputField.css("border", "3px solid red"); 
+              submit = false; 
+          }
+      }
+      
+  });
+
+  var selectedLocation = jQuery('#locations').val();
+  console.log("Selected Location:", selectedLocation); // Debugging
+  if (!selectedLocation || selectedLocation.trim() === "") {
+      errorArray.push(jQuery('#locations')); 
+      jQuery('#locations').css("border", "3px solid red"); 
+      submit = false; 
+  }
+
+  if (submit) {
+      console.log("Form is submitting..."); // Debugging
+      jQuery('#bookingForm')[0].submit(); 
+      jQuery('#bookingForm')[0].reset(); 
+      setTimeout(function () {
+          window.location.href = "./thank-you.html";
+      }, 2000); 
+  } else {
+      alert("Please correct the highlighted fields."); // Fix alert
+      errorArray.forEach(function (inputField) {
+          inputField.on("input", function () {
+              jQuery(this).css("border", ""); 
+          });
+      });
+  }
+});
+
+jQuery('#bookingForm').on('submit', function (e) {
+  e.preventDefault(); // Prevent default form submission
+
+  const form = this;
+  const url = form.action;
+  const formData = jQuery(form).serialize();
+
+  jQuery.ajax({
+    url: url,
+    method: "POST",
+    data: formData,
+    dataType: "xml", // Google Forms returns XML response
+    statusCode: {
+      0: function () {
+        // Redirect to thank you page (0 = success with no content)
+        window.location.href = "./thank-you.html";
+      },
+      200: function () {
+        // Just in case Google replies with 200
+        window.location.href = "./thank-you.html";
+      }
+    }
+  });
+});
 
 
 })(jQuery); // End of use strict

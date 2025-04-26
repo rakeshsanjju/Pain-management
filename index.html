@@ -975,9 +975,8 @@
     <!-- Start Contact Section -->
     <div id="contact-modal" class="modal" style="margin-top: 30px;">
       <div class="modal-content">
-        <!-- Removed the close button -->
         <span class="close-btn">&times;</span>
-
+    
         <section class="st-shape-wrap" id="contact">
           <div class="st-shape1"><img src="assets/img/shape/contact-shape1.svg" alt="shape1"></div>
           <div class="st-shape2"><img src="assets/img/shape/contact-shape2.svg" alt="shape2"></div>
@@ -991,46 +990,94 @@
             </div>
             <div class="st-height-b40 st-height-lg-b40"></div>
           </div>
+    
           <div class="container" style="min-height: 480px;">
             <div class="row">
               <div class="col-lg-10 offset-lg-1">
-                <!-- Contact Form -->
+                <!-- Modal Contact Form (Google Form submission) -->
                 <form method="POST"
-                  action="https://script.google.com/macros/s/AKfycbxhfXd3S_3xljt7PUgoN4eTRnHtJNaPApFA6nQMEtoc2SEqKx62M6xx6ClgoqNGohvQrw/exec"
-                  name="contact-form" onsubmit="return handleFormSubmit(event)">
-                  <div id="st-alert1"></div>
+                  action="https://docs.google.com/forms/d/e/1FAIpQLScf7POLtr9OpSvf4oxhGJBjlkrgkAG0gNZlI1k3FfNBq3cJtA/formResponse"
+                  id="bookingForm" target="hiddenIframe">
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="st-form-field st-style1">
-                        <label for="your-name">Full Name</label>
-                        <input type="text" name="your-name" placeholder="Your Name" required>
+                        <label for="fname">Full Name*</label>
+                        <input type="text" class="form-control" name="entry.1497762197" id="fname"
+                          placeholder="Full Name" required>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="st-form-field st-style1">
-                        <label for="your-number">Phone Number</label>
-                        <input type="text" name="your-number" placeholder="Your Number" required>
+                        <label for="phone">Phone*</label>
+                        <input type="tel" class="form-control" name="entry.1688956995" id="phone"
+                          placeholder="Phone" required>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="st-form-field st-style1">
-                        <label for="your-email">Email Address</label>
-                        <input type="email" name="your-email" placeholder="example@gmail.com" required>
+                        <label for="email">Email address*</label>
+                        <input type="email" class="form-control" name="entry.279489890" id="email"
+                          placeholder="Email" required>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="st-form-field st-style1">
-                        <label for="udate">Booking Date</label>
-                        <input name="udate" type="text" placeholder="dd/mm/yy">
+                        <label for="locations">Location*</label>
+                        <select name="entry.420620305" id="locations" class="form-control" required>
+                          <option value="">Select Location</option>
+                          <option value="Vijayawada, Andhrapradesh">Vijayawada, Andhrapradesh</option>
+                          <option value="Kurnool, Andhrapradesh">Kurnool, Andhrapradesh</option>
+                          <option value="Kadapa, Andhrapradesh">Kadapa, Andhrapradesh</option>
+                          <option value="Rajahmundry, Andhrapradesh">Rajahmundry, Andhrapradesh</option>
+                          <option value="Tirupathi, Andhrapradesh">Tirupathi, Andhrapradesh</option>
+                          <option value="Anantapur, Andhrapradesh">Anantapur, Andhrapradesh</option>
+                          <option value="Visakhapatnam, Andhrapradesh">Visakhapatnam, Andhrapradesh</option>
+                          <option value="Kukatpally, Hyderabad, Telengana">Kukatpally, Hyderabad, Telengana</option>
+                          <option value="JublieeHills, Hyderabad, Telengana">Jubliee Hills, Hyderabad, Telengana</option>
+                          <option value="Gachibowli, Hyderabad, Telengana">Gachibowli, Hyderabad, Telengana</option>
+                          <option value="Chennai, Tamil Nadu">Chennai, Tamil Nadu</option>
+                          <option value="Madurai, Tamil Nadu">Madurai, Tamil Nadu</option>
+                          <option value="Coimbatore, Tamil Nadu">Coimbatore, Tamil Nadu</option>
+                          <option value="Durgapur, West Bengal">Durgapur, West Bengal</option>
+                          <option value="Siliguri, West Bengal">Siliguri, West Bengal</option>
+                          <option value="Kolkata, West Bengal">Kolkata, West Bengal</option>
+                          <option value="Belagaon, West Bengal">Belagaon, West Bengal</option>
+                          <option value="Jayanagar, Bangalore, Karnataka">Jayanagar, Bangalore, Karnataka</option>
+                          <option value="Mathikere, Bangalore, Karnataka">Mathikere, Bangalore, Karnataka</option>
+                          <option value="Mangalore, Karnataka">Mangalore, Karnataka</option>
+                          <option value="Mysore, Karnataka">Mysore, Karnataka</option>
+                          <option value="Belagavi, Karnataka">Belagavi, Karnataka</option>
+                          <option value="Mumbai, Maharashtra">Mumbai, Maharashtra</option>
+                          <option value="Pune, Maharashtra">Pune, Maharashtra</option>
+                          <option value="Greater Kailash, Delhi">Greater Kailash, Delhi</option>
+                        </select>
                         <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
                       </div>
                     </div>
                     <div class="col-lg-12">
                       <div class="st-form-field st-style1">
-                        <label for="message">Message</label>
-                        <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+                        <label for="addr">Your Query</label>
+                        <textarea type="text" class="form-control" name="entry.1375386489" id="addr"
+                          placeholder="Your Query" cols="1" rows="1" required></textarea>
                       </div>
                     </div>
+    
+                    <!-- Hidden UTM Fields -->
+                    <div class="hiddenFields">
+                      <input type="hidden" name="entry.867646131" id="utm_campaign" value="">
+                      <input type="hidden" name="entry.541602526" id="keyword" value="">
+                      <input type="hidden" name="entry.831553958" id="matchtype" value="">
+                      <input type="hidden" name="entry.555795976" id="creative" value="">
+                      <input type="hidden" name="entry.200281805" id="target" value="">
+                      <input type="hidden" name="entry.1761065726" id="placement" value="">
+                      <input type="hidden" name="entry.1798050689" id="device" value="">
+                      <input type="hidden" name="entry.574623447" id="utm_adgroup" value="">
+                      <input type="hidden" name="entry.1535948865" id="utm_source" value="">
+                      <input type="hidden" name="entry.2069422691" id="campaign_type" value="">
+                      <input type="hidden" name="entry.1508523688" id="gclid" value="">
+                      <input type="hidden" name="entry.112354717" id="utm_term" value="">
+                    </div>
+    
                     <div class="col-lg-12">
                       <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="submit"
                         style=" background-color:  #22699c ;">
@@ -1042,11 +1089,10 @@
               </div>
             </div>
           </div>
-
         </section>
       </div>
     </div>
-
+    
 
     <section class="st-shape-wrap" id="contact-us">
 
@@ -1068,49 +1114,95 @@
           <div class="col-lg-10 offset-lg-1">
             <!-- Contact Form -->
             <form method="POST"
-              action="https://script.google.com/macros/s/AKfycbxhfXd3S_3xljt7PUgoN4eTRnHtJNaPApFA6nQMEtoc2SEqKx62M6xx6ClgoqNGohvQrw/exec"
-              name="contact-form" onsubmit="return handleFormSubmit(event)">
-              <div id="st-alert1"></div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="your-name">Full Name</label>
-                    <input type="text" name="your-name" placeholder="Your Name" required>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="your-number">Phone Number</label>
-                    <input type="text" name="your-number" placeholder="Your Number" required>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="your-email">Email Address</label>
-                    <input type="email" name="your-email" placeholder="example@gmail.com" required>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="st-form-field st-style1">
-                    <label for="udate">Booking Date</label>
-                    <input name="udate" type="text" placeholder="dd/mm/yy">
-                    <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="st-form-field st-style1">
-                    <label for="message">Message</label>
-                    <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="submit"
-                    style=" background-color:  #22699c ;">
-                    Book Appointment
-                  </button>
-                </div>
-              </div>
-            </form>
+  action="https://docs.google.com/forms/d/e/1FAIpQLScf7POLtr9OpSvf4oxhGJBjlkrgkAG0gNZlI1k3FfNBq3cJtA/formResponse"
+  id="bookingForm" target="hiddenIframe">
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="st-form-field st-style1">
+        <label for="fname">Full Name*</label>
+        <input type="text" class="form-control" name="entry.1497762197" id="fname" placeholder="Full Name" required>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="st-form-field st-style1">
+        <label for="email">Email address*</label>
+        <input type="email" class="form-control" name="entry.279489890" id="email" placeholder="Email" required>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="st-form-field st-style1">
+        <label for="phone">Phone*</label>
+        <input type="tel" class="form-control" name="entry.1688956995" id="phone" placeholder="Phone" required>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="st-form-field st-style1">
+        <label for="locations">Location*</label>
+        <select name="entry.420620305" id="locations" class="form-control" required>
+          <option value="">Select Location</option>
+          <option value="Vijayawada, Andhrapradesh">Vijayawada, Andhrapradesh</option>
+          <option value="Kurnool, Andhrapradesh">Kurnool, Andhrapradesh</option>
+          <option value="Kadapa, Andhrapradesh">Kadapa, Andhrapradesh</option>
+          <option value="Rajahmundry, Andhrapradesh">Rajahmundry, Andhrapradesh</option>
+          <option value="Tirupathi, Andhrapradesh">Tirupathi, Andhrapradesh</option>
+          <option value="Anantapur, Andhrapradesh">Anantapur, Andhrapradesh</option>
+          <option value="Visakhapatnam, Andhrapradesh">Visakhapatnam, Andhrapradesh</option>
+          <option value="Kukatpally, Hyderabad, Telengana">Kukatpally, Hyderabad, Telengana</option>
+          <option value="JublieeHills, Hyderabad, Telengana">Jubliee Hills, Hyderabad, Telengana</option>
+          <option value="Gachibowli, Hyderabad, Telengana">Gachibowli, Hyderabad, Telengana</option>
+          <option value="Chennai, Tamil Nadu">Chennai, Tamil Nadu</option>
+          <option value="Madurai, Tamil Nadu">Madurai, Tamil Nadu</option>
+          <option value="Coimbatore, Tamil Nadu">Coimbatore, Tamil Nadu</option>
+          <option value="Durgapur, West Bengal">Durgapur, West Bengal</option>
+          <option value="Siliguri, West Bengal">Siliguri, West Bengal</option>
+          <option value="Kolkata, West Bengal">Kolkata, West Bengal</option>
+          <option value="Belagaon, West Bengal">Belagaon, West Bengal</option>
+          <option value="Jayanagar, Bangalore, Karnataka">Jayanagar, Bangalore, Karnataka</option>
+          <option value="Mathikere, Bangalore, Karnataka">Mathikere, Bangalore, Karnataka</option>
+          <option value="Mangalore, Karnataka">Mangalore, Karnataka</option>
+          <option value="Mysore, Karnataka">Mysore, Karnataka</option>
+          <option value="Belagavi, Karnataka">Belagavi, Karnataka</option>
+          <option value="Mumbai, Maharashtra">Mumbai, Maharashtra</option>
+          <option value="Pune, Maharashtra">Pune, Maharashtra</option>
+          <option value="Greater Kailash, Delhi">Greater Kailash, Delhi</option>
+        </select>
+        <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="st-form-field st-style1">
+        <label for="addr">Your Query</label>
+        <textarea type="text" class="form-control" name="entry.1375386489" id="addr"
+          placeholder="Your Query" cols="1" rows="1" required></textarea>
+      </div>
+    </div>
+
+    <!-- Hidden Fields -->
+    <div class="hiddenFields">
+      <input type="hidden" name="entry.867646131" id="utm_campaign" value="">
+      <input type="hidden" name="entry.541602526" id="keyword" value="">
+      <input type="hidden" name="entry.831553958" id="matchtype" value="">
+      <input type="hidden" name="entry.555795976" id="creative" value="">
+      <input type="hidden" name="entry.200281805" id="target" value="">
+      <input type="hidden" name="entry.1761065726" id="placement" value="">
+      <input type="hidden" name="entry.1798050689" id="device" value="">
+      <input type="hidden" name="entry.574623447" id="utm_adgroup" value="">
+      <input type="hidden" name="entry.1535948865" id="utm_source" value="">
+      <input type="hidden" name="entry.2069422691" id="campaign_type" value="">
+      <input type="hidden" name="entry.1508523688" id="gclid" value="">
+      <input type="hidden" name="entry.112354717" id="utm_term" value="">
+    </div>
+
+    <div class="col-lg-12">
+      <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="submit"
+        style=" background-color:  #22699c ;">
+        Book Appointment
+      </button>
+    </div>
+  </div>
+</form>
+
           </div>
         </div>
       </div>

@@ -800,8 +800,9 @@ var utmParams = getUTMparams();
   }
 });
 
-jQuery('#bookingForm').on('submit', function (e) {
-  e.preventDefault(); // Prevent default form submission
+// Handle both modal and contact forms
+jQuery('#modalBookingForm, #contactBookingForm').on('submit', function (e) {
+  e.preventDefault(); // Prevent default submission
 
   const form = this;
   const url = form.action;
@@ -811,10 +812,10 @@ jQuery('#bookingForm').on('submit', function (e) {
     url: url,
     method: "POST",
     data: formData,
-    dataType: "xml", // Google Forms returns XML response
+    dataType: "xml", // Google Form returns XML
     statusCode: {
       0: function () {
-        // Redirect to thank you page (0 = success with no content)
+        // Success (no content response)
         window.location.href = "./thank-you.html";
       },
       200: function () {
@@ -824,6 +825,7 @@ jQuery('#bookingForm').on('submit', function (e) {
     }
   });
 });
+
 
 
 })(jQuery); // End of use strict
